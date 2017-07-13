@@ -2,7 +2,7 @@
 
 #define SIGFOX_FIRST_REPORT_SECONDS 10
 #define SIGFOX_REPORT_MINUTES (60 * 60)
-#define BATTERY_MODULE_UPDATE_INTERVAL 100 // (10 * 1000)
+#define BATTERY_MODULE_UPDATE_INTERVAL (10 * 1000)
 #define SENSOR_DATA_STREAM_SAMPLES 6
 
 // Define custom frame to access sigfox buffer
