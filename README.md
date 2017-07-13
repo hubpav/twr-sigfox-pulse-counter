@@ -1,6 +1,6 @@
 <a href="https://www.bigclown.com"><img src="https://s3.eu-central-1.amazonaws.com/bigclown/gh-readme-logo.png" alt="BigClown Logo" align="right"></a>
 
-# Firmware Skeleton for BigClown Core Module
+# Firmware for BigClown Sigfox Pulse Counter
 
 [![Travis](https://img.shields.io/travis/bigclownlabs/bcf-sigfox-pulse-counter/master.svg)](https://travis-ci.org/bigclownlabs/bcf-sigfox-pulse-counter)
 [![Release](https://img.shields.io/github/release/bigclownlabs/bcf-sigfox-pulse-counter.svg)](https://github.com/bigclownlabs/bcf-sigfox-pulse-counter/releases)
@@ -15,9 +15,9 @@ If you want to get more information about, firmware and how to work with it, ple
 
 ## Introduction
 
-Sigfox pulse counter to be used as a wireles counter.
+Sigfox pulse counter to be used as a wireles counter. Device running from two AAA batteries. It reports measured data to Sigfox network every 60 minutes.
 
-#Hardware
+## Hardware
 
 The following hardware components are used for this project:
 
