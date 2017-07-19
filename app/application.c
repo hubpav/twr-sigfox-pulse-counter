@@ -74,7 +74,7 @@ void sigfox_module_event_handler(bc_module_sigfox_t *self, bc_module_sigfox_even
 
 void application_init(void)
 {
-    bc_data_stream_init(&stream_battery_voltage_mv, BATTERY_VOLTAGE_DATA_STREAM_SAMPLES , &stream_buffer_battery_voltage_mv);
+    bc_data_stream_init(&stream_battery_voltage_mv, 1, &stream_buffer_battery_voltage_mv);
 
 	bc_led_init(&led, BC_GPIO_LED, false, false);
 	bc_led_set_mode(&led, BC_LED_MODE_FLASH);
@@ -88,7 +88,7 @@ void application_init(void)
 	bc_module_battery_set_update_interval(BATTERY_MODULE_UPDATE_INTERVAL_SECONDS * 1000);
     bc_module_battery_set_event_handler(battery_module_event_handler, NULL);
 
-	bc_module_sigfox_init(&sigfox_module, BC_MODULE_SIGFOX_REVISION_R2);
+	bc_module_sigfox_init(&sigfox_module, BC_MODULE_SIGFOX_REVISION_R1);
 	bc_module_sigfox_set_event_handler(&sigfox_module, sigfox_module_event_handler, NULL);
 
 	bc_scheduler_plan_absolute(0, SIGFOX_FIRST_REPORT_SECONDS * 1000);
@@ -107,16 +107,19 @@ void application_task(void *param)
     uint8_t buffer[12];
     uint32_t channel_count_a;
     uint32_t channel_count_b;
+    int battery_voltage;
 	uint16_t battery_voltage_mv;
 
     channel_count_a = bc_pulse_counter_get(BC_MODULE_SENSOR_CHANNEL_A);
     channel_count_b = bc_pulse_counter_get(BC_MODULE_SENSOR_CHANNEL_B);
-	bc_data_stream_get_average(&stream_battery_voltage_mv, &battery_voltage_mv);
+	bc_data_stream_get_average(&stream_battery_voltage_mv, &battery_voltage);
 
 	if ((channel_a_overflow_count > 0xff) || (channel_b_overflow_count > 0xff))
 	{
 	    header = HEADER_EVENT_ERROR;
 	}
+
+	battery_voltage_mv = (uint16_t)battery_voltage;
 
     buffer[0] = header;
     buffer[1] = (((channel_a_overflow_count << 4) & 0xf0) | ((channel_b_overflow_count) & 0x0f));
