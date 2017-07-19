@@ -88,7 +88,7 @@ void application_init(void)
 	bc_module_battery_set_update_interval(BATTERY_MODULE_UPDATE_INTERVAL_SECONDS * 1000);
     bc_module_battery_set_event_handler(battery_module_event_handler, NULL);
 
-	bc_module_sigfox_init(&sigfox_module, BC_MODULE_SIGFOX_REVISION_R1);
+	bc_module_sigfox_init(&sigfox_module, BC_MODULE_SIGFOX_REVISION_R2);
 	bc_module_sigfox_set_event_handler(&sigfox_module, sigfox_module_event_handler, NULL);
 
 	bc_scheduler_plan_absolute(0, SIGFOX_FIRST_REPORT_SECONDS * 1000);
