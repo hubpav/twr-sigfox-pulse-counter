@@ -2,7 +2,7 @@
 
 #define BATTERY_VOLTAGE_DATA_STREAM_SAMPLES  6
 #define SIGFOX_FIRST_REPORT_SECONDS (10)
-#define SIGFOX_REPORT_INTERVAL_SECONDS (60 * 60)
+#define SIGFOX_REPORT_INTERVAL_SECONDS (15 * 60)
 #define BATTERY_MODULE_UPDATE_INTERVAL_SECONDS (SIGFOX_REPORT_INTERVAL_SECONDS / BATTERY_VOLTAGE_DATA_STREAM_SAMPLES )
 
 #define HEADER_EVENT_ERROR 0xff
@@ -14,6 +14,8 @@ bc_data_stream_t stream_battery_voltage_mv;
 bc_led_t led;
 
 bc_module_sigfox_t sigfox_module;
+
+bc_button_t button;
 
 uint8_t header = HEADER_EVENT_UPDATE;
 
@@ -72,6 +74,17 @@ void sigfox_module_event_handler(bc_module_sigfox_t *self, bc_module_sigfox_even
 	}
 }
 
+void button_event_handler(bc_button_t *self, bc_button_event_t event, void *event_param)
+{
+	(void) self;
+	(void) event_param;
+
+	if (event == BC_BUTTON_EVENT_HOLD)
+	{
+		bc_scheduler_plan_now(0);
+	}
+}
+
 void application_init(void)
 {
     bc_data_stream_init(&stream_battery_voltage_mv, 1, &stream_buffer_battery_voltage_mv);
@@ -90,6 +103,9 @@ void application_init(void)
 
 	bc_module_sigfox_init(&sigfox_module, BC_MODULE_SIGFOX_REVISION_R2);
 	bc_module_sigfox_set_event_handler(&sigfox_module, sigfox_module_event_handler, NULL);
+
+    bc_button_init(&button, BC_GPIO_BUTTON, BC_GPIO_PULL_DOWN, false);
+    bc_button_set_event_handler(&button, button_event_handler, NULL);
 
 	bc_scheduler_plan_absolute(0, SIGFOX_FIRST_REPORT_SECONDS * 1000);
 }
