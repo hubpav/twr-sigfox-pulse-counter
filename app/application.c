@@ -3,22 +3,18 @@
 #define BATTERY_VOLTAGE_DATA_STREAM_SAMPLES  6
 #define SIGFOX_FIRST_REPORT_SECONDS (10)
 #define SIGFOX_REPORT_INTERVAL_SECONDS (15 * 60)
-#define BATTERY_MODULE_UPDATE_INTERVAL_SECONDS (SIGFOX_REPORT_INTERVAL_SECONDS / BATTERY_VOLTAGE_DATA_STREAM_SAMPLES )
+#define BATTERY_MODULE_UPDATE_INTERVAL_SECONDS (SIGFOX_REPORT_INTERVAL_SECONDS / BATTERY_VOLTAGE_DATA_STREAM_SAMPLES)
 
 #define HEADER_EVENT_ERROR 0xff
 #define HEADER_EVENT_UPDATE 0x00
 
-BC_DATA_STREAM_INT_BUFFER(stream_buffer_battery_voltage_mv, BATTERY_VOLTAGE_DATA_STREAM_SAMPLES )
+BC_DATA_STREAM_INT_BUFFER(stream_buffer_battery_voltage_mv, BATTERY_VOLTAGE_DATA_STREAM_SAMPLES)
 bc_data_stream_t stream_battery_voltage_mv;
 
 bc_led_t led;
-
 bc_module_sigfox_t sigfox_module;
-
 bc_button_t button;
-
 uint8_t header = HEADER_EVENT_UPDATE;
-
 unsigned int channel_a_overflow_count = 0;
 unsigned int channel_b_overflow_count = 0;
 
@@ -62,11 +58,7 @@ void sigfox_module_event_handler(bc_module_sigfox_t *self, bc_module_sigfox_even
 
 	if (event == BC_MODULE_SIGFOX_EVENT_SEND_RF_FRAME_START)
 	{
-		bc_led_set_mode(&led, BC_LED_MODE_ON);
-	}
-	else if (event == BC_MODULE_SIGFOX_EVENT_SEND_RF_FRAME_DONE)
-	{
-		bc_led_set_mode(&led, BC_LED_MODE_OFF);
+	    bc_led_pulse(&led, 100);
 	}
 	else if (event == BC_MODULE_SIGFOX_EVENT_ERROR)
 	{
