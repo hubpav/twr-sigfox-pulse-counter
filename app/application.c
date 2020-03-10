@@ -89,7 +89,7 @@ void application_init(void)
 	bc_pulse_counter_init(BC_MODULE_SENSOR_CHANNEL_B, BC_PULSE_COUNTER_EDGE_FALL);
     bc_pulse_counter_set_event_handler(BC_MODULE_SENSOR_CHANNEL_B, pulse_counter_event_handler, NULL);
 
-	bc_module_battery_init(BC_MODULE_BATTERY_FORMAT_MINI);
+	bc_module_battery_init();
 	bc_module_battery_set_update_interval(BATTERY_MODULE_UPDATE_INTERVAL_SECONDS * 1000);
     bc_module_battery_set_event_handler(battery_module_event_handler, NULL);
 
