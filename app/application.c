@@ -39,15 +39,16 @@ void battery_module_event_handler(bc_module_battery_event_t event, void *event_p
 {
     (void) event_param;
 
+    float voltage;
+
     if (event == BC_MODULE_BATTERY_EVENT_UPDATE)
     {
-        float battery_voltage;
-        int battery_voltage_mv;
-
-        bc_module_battery_update_voltage_on_battery(&battery_voltage);
-        battery_voltage_mv = battery_voltage * 1000;
-
-        bc_data_stream_feed(&stream_battery_voltage_mv, &battery_voltage_mv);
+        if (bc_module_battery_get_voltage(&voltage))
+        {
+		    int battery_voltage_mv;
+        	battery_voltage_mv = (int)voltage * 1000;
+        	bc_data_stream_feed(&stream_battery_voltage_mv, &battery_voltage_mv);
+        }
     }
 }
 
