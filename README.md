@@ -1,17 +1,17 @@
-<a href="https://www.bigclown.com/"><img src="https://bigclown.sirv.com/logo.png" width="200" alt="BigClown Logo" align="right"></a>
+<a href="https://www.hardwario.com/"><img src="https://www.hardwario.com/ci/assets/hw-logo.svg" width="200" alt="HARDWARIO Logo" align="right"></a>
 
-# Firmware for BigClown Sigfox Pulse Counter
+# Firmware for HARDWARIO Sigfox Pulse Counter
 
 [![Travis](https://img.shields.io/travis/bigclownlabs/bcf-sigfox-pulse-counter/master.svg)](https://travis-ci.org/bigclownlabs/bcf-sigfox-pulse-counter)
 [![Release](https://img.shields.io/github/release/bigclownlabs/bcf-sigfox-pulse-counter.svg)](https://github.com/bigclownlabs/bcf-sigfox-pulse-counter/releases)
 [![License](https://img.shields.io/github/license/bigclownlabs/bc-bcf-sigfox-pulse-counter.svg)](https://github.com/bigclownlabs/bcf-sigfox-pulse-counter/blob/master/LICENSE)
-[![Twitter](https://img.shields.io/twitter/follow/BigClownLabs.svg?style=social&label=Follow)](https://twitter.com/BigClownLabs)
+[![Twitter](https://img.shields.io/twitter/follow/hardwario_en.svg?style=social&label=Follow)](https://twitter.com/hardwario_en)
 
 This repository contains firmware for sigfox pulse counter project.
 
 If you want to get more information about, firmware and how to work with it, please follow this link:
 
-**https://doc.bigclown.com/core-module.html**
+**https://developers.hardwario.com/firmware/firmware-quick-start**
 
 ## Introduction
 

@@ -1,7 +1,7 @@
 article: https://github.com/bigclownlabs/bcf-kit-sigfox-pulse-counter/blob/master/README.md
 assembly:
-  - name: BigClown Sensor Module
-  - name: BigClown Sigfox Module
-  - name: BigClown Core Module
-  - name: BigClown Mini Battery Module
+  - name: HARDWARIO Sensor Module
+  - name: HARDWARIO Sigfox Module
+  - name: HARDWARIO Core Module
+  - name: HARDWARIO Mini Battery Module
   
