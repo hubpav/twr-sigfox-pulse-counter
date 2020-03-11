@@ -4,7 +4,7 @@
 
 [![Travis](https://img.shields.io/travis/bigclownlabs/bcf-sigfox-pulse-counter/master.svg)](https://travis-ci.org/bigclownlabs/bcf-sigfox-pulse-counter)
 [![Release](https://img.shields.io/github/release/bigclownlabs/bcf-sigfox-pulse-counter.svg)](https://github.com/bigclownlabs/bcf-sigfox-pulse-counter/releases)
-[![License](https://img.shields.io/github/license/bigclownlabs/bc-bcf-sigfox-pulse-counter.svg)](https://github.com/bigclownlabs/bcf-sigfox-pulse-counter/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/bigclownlabs/bcf-sigfox-pulse-counter.svg)](https://github.com/bigclownlabs/bcf-sigfox-pulse-counter/blob/master/LICENSE)
 [![Twitter](https://img.shields.io/twitter/follow/hardwario_en.svg?style=social&label=Follow)](https://twitter.com/hardwario_en)
 
 This repository contains firmware for sigfox pulse counter project.
