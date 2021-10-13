@@ -1,7 +1,7 @@
-/obj/
-/out/
-.cproject
-.project
-stm32_flash.ld
-Debug/
-.settings/
+obj/
+out/
+.gitmodules
+.DS_Store
+firmware.bin
+.pio/
+.vscode/
