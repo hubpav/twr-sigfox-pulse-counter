@@ -2,7 +2,7 @@
 
 # Firmware for HARDWARIO Sigfox Pulse Counter
 
-[![Travis](https://img.shields.io/travis/bigclownlabs/bcf-sigfox-pulse-counter/master.svg)](https://travis-ci.org/bigclownlabs/bcf-sigfox-pulse-counter)
+[![build](https://github.com/hardwario/twr-sigfox-pulse-counter/actions/workflows/main.yml/badge.svg)](https://github.com/hardwario/twr-sigfox-pulse-counter/actions/workflows/main.yml)
 [![Release](https://img.shields.io/github/release/bigclownlabs/bcf-sigfox-pulse-counter.svg)](https://github.com/bigclownlabs/bcf-sigfox-pulse-counter/releases)
 [![License](https://img.shields.io/github/license/bigclownlabs/bcf-sigfox-pulse-counter.svg)](https://github.com/bigclownlabs/bcf-sigfox-pulse-counter/blob/master/LICENSE)
 [![Twitter](https://img.shields.io/twitter/follow/hardwario_en.svg?style=social&label=Follow)](https://twitter.com/hardwario_en)
